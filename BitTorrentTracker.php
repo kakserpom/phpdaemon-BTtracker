@@ -964,7 +964,7 @@ class BitTorrentTracker_RatingUpdate extends Request
   $req = $this;
   $appInstance = $this->appInstance;
   $reqID = $this->idAppQueue;
-  $req->appInstance->LockClient->job(__CLASS__,FALSE,function($jobname,$command,$client) use ($appInstance, $reqID)
+  $req->appInstance->LockClient->job(__CLASS__,FALSE,function($command,$jobname,$client) use ($appInstance, $reqID)
   {
    if (!isset($appInstance->queue[$reqID])) {return;}
    $req = $appInstance->queue[$reqID];
